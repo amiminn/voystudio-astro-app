@@ -27,7 +27,7 @@ const ScrollTopAndComment = () => {
         show ? "md:flex" : "md:hidden"
       }`}
     >
-      {regex.test(window.location.pathname) && (
+      {/* {regex.test(window.location.pathname) && (
         <button
           aria-label="Scroll To Comment"
           type="button"
@@ -42,7 +42,7 @@ const ScrollTopAndComment = () => {
             />
           </svg>
         </button>
-      )}
+      )} */}
       <button
         aria-label="Scroll To Top"
         type="button"
