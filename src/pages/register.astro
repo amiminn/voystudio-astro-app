@@ -1,0 +1,7 @@
+---
+import RegisterPage from "@/components/auth/register";
+import AuthLayout from "@/layouts/AuthLayout.astro";
+---
+<AuthLayout>
+    <RegisterPage client:only='react'/>
+</AuthLayout>
