@@ -1,10 +1,12 @@
-import { Key } from "lucide-react";
+import { Key, Terminal } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { apiUrl } from "@/lib/url-lib";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import AuthTemplate from "./AuthTemplate";
+import AuthTemplate from "../layout/authLayout";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { toast } from "@/hooks/use-toast";
 export default function RegisterPage() {
   const [name, setName] = useState<string>("");
   const [username, setUsername] = useState<string>("");
@@ -28,16 +30,25 @@ export default function RegisterPage() {
       };
 
       const res = await axios.post(url, data);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
+      toast({
+        title: "Success",
+        description: res.data.message,
+      });
+    } catch (error: any) {
+      toast({
+        title: "Gagal",
+        description: error.response.data.error,
+        variant: "destructive",
+      });
     }
   }
 
   return (
     <AuthTemplate stateTemplate="register">
       <div className="text-center ">
-        <div className="text-xl font-semibold ">Voy Studio</div>
+        <div className="text-xl font-semibold ">
+          {import.meta.env.PUBLIC_APP_NAME}
+        </div>
         <h1 className="text-2xl font-extrabold xl:text-3xl">Sign Up</h1>
         <div className="text-red-500">{error}</div>
         <div className="flex-1 w-full mt-8">

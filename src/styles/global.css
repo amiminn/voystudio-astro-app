@@ -3,97 +3,97 @@
 @tailwind utilities;
 
 ::selection {
-    background-color: #47a3f3;
-    color: #fefefe;
+  background-color: #47a3f3;
+  color: #fefefe;
 }
 
 html {
-    min-width: 360px;
-    scroll-behavior: smooth;
+  min-width: 360px;
+  scroll-behavior: smooth;
 }
 
 #__next {
-    @apply bg-gray-50 dark:bg-gray-900;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  @apply bg-gray-50 dark:bg-gray-900;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* https://seek-oss.github.io/capsize/ */
 .capsize::before {
-    content: '';
-    margin-bottom: -0.098em;
-    display: table;
+  content: "";
+  margin-bottom: -0.098em;
+  display: table;
 }
 
 .capsize::after {
-    content: '';
-    margin-top: -0.219em;
-    display: table;
+  content: "";
+  margin-top: -0.219em;
+  display: table;
 }
 
 .skip-nav {
-    @apply absolute px-4 py-3 transition-transform duration-200 transform -translate-y-12 -left-1/4 focus:top-4 focus:translate-y-3 -top-8;
+  @apply absolute px-4 py-3 transition-transform duration-200 transform -translate-y-12 -left-1/4 focus:top-4 focus:translate-y-3 -top-8;
 }
 
 #skip {
-    scroll-margin-top: 1.125rem;
+  scroll-margin-top: 1.125rem;
 }
 
 @supports not (backdrop-filter: none) {
-    .sticky-nav {
-        backdrop-filter: none;
-        @apply bg-opacity-100;
-    }
+  .sticky-nav {
+    backdrop-filter: none;
+    @apply bg-opacity-100;
+  }
 }
 
 .prose .anchor {
-    @apply absolute invisible no-underline;
+  @apply absolute invisible no-underline;
 
-    margin-left: -1em;
-    padding-right: 0.5em;
-    width: 80%;
-    max-width: 700px;
-    cursor: pointer;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
 }
 
 .anchor:hover {
-    @apply visible;
+  @apply visible;
 }
 
 .prose a {
-    @apply transition-all;
+  @apply transition-all;
 }
 
 .prose .anchor:after {
-    @apply text-gray-300 dark:text-gray-700;
-    content: '#';
+  @apply text-gray-300 dark:text-gray-700;
+  content: "#";
 }
 
 .prose *:hover > .anchor {
-    @apply visible;
+  @apply visible;
 }
 
 .prose img {
-    /* Don't apply styles to next/image */
-    @apply m-0;
+  /* Don't apply styles to next/image */
+  @apply m-0;
 }
 
 .prose > :first-child {
-    /* Override removing top margin, causing layout shift */
-    margin-top: 1.25em !important;
-    margin-bottom: 1.25em !important;
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .token.punctuation {
-    @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .token.property,
@@ -103,7 +103,7 @@ html {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    @apply text-green-500;
+  @apply text-green-500;
 }
 
 .token.selector,
@@ -112,7 +112,7 @@ html {
 .token.char,
 .token.builtin,
 .token.inserted {
-    @apply text-purple-500;
+  @apply text-purple-500;
 }
 
 .token.operator,
@@ -120,157 +120,161 @@ html {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    @apply text-yellow-500;
+  @apply text-yellow-500;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    @apply text-blue-500;
+  @apply text-blue-500;
 }
 
 .token.function,
 .token.class-name {
-    @apply text-pink-500;
+  @apply text-pink-500;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-    @apply text-yellow-500;
+  @apply text-yellow-500;
 }
 
 span[data-highlighted-line] {
-    @apply block px-4 -mx-4 bg-gray-600 border-l-4 border-blue-500 dark:bg-gray-800;
+  @apply block px-4 -mx-4 bg-gray-600 border-l-4 border-blue-500 dark:bg-gray-800;
 }
 
 /* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+input[type="text"],
+input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .metric-card > a {
-    @apply no-underline;
+  @apply no-underline;
 }
 
 .metric-card > p {
-    @apply my-2;
+  @apply my-2;
 }
 
 .step > h3 {
-    @apply my-0;
+  @apply my-0;
 }
 
 .prose .tweet a {
-    text-decoration: inherit;
-    font-weight: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
 }
 
 table {
-    display: block;
-    max-width: fit-content;
-    overflow-x: auto;
-    white-space: nowrap;
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .prose .callout > p {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 giscus-widget {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .prose pre {
-    @apply border border-[#4a4a4a];
+  @apply border border-[#4a4a4a];
 }
 
 code {
-    counter-reset: line;
+  counter-reset: line;
 }
 
 code > [data-line]::before {
-    counter-increment: line;
-    content: counter(line);
-    display: inline-block;
-    width: 1rem;
-    margin-right: 2rem;
-    text-align: right;
-    color: gray;
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
 }
 
-code[data-line-numbers-max-digits='2'] > [data-line]::before {
-    width: 2rem;
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
 }
 
-code[data-line-numbers-max-digits='3'] > [data-line]::before {
-    width: 3rem;
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
 }
 
 @layer base {
   :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
-    }
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
   .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
+
+  input {
+    @apply text-black;
+  }
 }

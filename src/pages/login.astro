@@ -3,5 +3,5 @@ import AuthLayout from "@/layouts/AuthLayout.astro";
 import LoginPage from "@components/auth/login"
 ---
 <AuthLayout>
-    <LoginPage/>
+    <LoginPage client:only='react'/>
 </AuthLayout>

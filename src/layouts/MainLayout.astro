@@ -8,6 +8,7 @@ import Footer from '../components/Footer.astro';
 import Seo from '../components/Seo.astro';
 import FaviconMetaData from '../components/FaviconMetaData.astro';
 import { ViewTransitions } from 'astro:transitions';
+import { Toaster } from '@/components/ui/toaster';
 
 interface Props {
     title?: string;
@@ -15,6 +16,9 @@ interface Props {
     ogImage?: string;
 }
 const { title, description, ogImage } = Astro.props as Props;
+
+const authToken = Astro.cookies.get('auth_token')?.value;
+console.log(authToken);
 ---
 
 <html lang='en'>
@@ -44,5 +48,6 @@ const { title, description, ogImage } = Astro.props as Props;
             <Footer />
         </main>
         <ScrollTopAndComment client:only='react' />
+        <Toaster />
     </body>
 </html>

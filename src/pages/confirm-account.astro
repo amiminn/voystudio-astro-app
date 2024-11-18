@@ -1,0 +1,7 @@
+---
+import AuthLayout from "@/layouts/AuthLayout.astro"
+import KonfirmasiAccount from "@components/auth/konfirmasi-account"
+---
+<AuthLayout title="account confirm">
+    <KonfirmasiAccount client:only='react'/>
+</AuthLayout>

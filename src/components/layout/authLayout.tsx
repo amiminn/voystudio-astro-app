@@ -1,8 +1,9 @@
 import React from "react";
+import { Toaster } from "../ui/toaster";
 
 type State = "lupa password" | "login" | "register" | "reset password";
 
-export default function AuthTemplate({
+export default function AuthLayout({
   children,
   stateTemplate,
 }: {
@@ -13,6 +14,7 @@ export default function AuthTemplate({
 
   return (
     <div className="h-[70vh] items-center flex">
+      <Toaster />
       <div className="w-full">
         {children}
         <div className="text-gray-600 italic dark:text-gray-100 text-sm mt-8 max-w-xs mx-auto">
@@ -90,8 +92,15 @@ export default function AuthTemplate({
           )}
         </div>
 
-        <p className="mt-6 text-xs text-center max-w-xs mx-auto">
-          I agree to abide by amiminn
+        <p className="mt-10 text-xs text-center max-w-xs mx-auto">
+          2024 @ authored by{" "}
+          <a
+            href="https://amiminn.my.id"
+            className="italic font-semibold"
+            target="_blank"
+          >
+            amimin
+          </a>
         </p>
       </div>
     </div>
